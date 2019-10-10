@@ -1,7 +1,10 @@
 // IMPORTS
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components'
 import { connect } from 'react-redux'
+
+// HOOKS
+import useInput from './hooks/useInput.js'
 
 import './reset.css';
 
@@ -12,6 +15,7 @@ import { a_apiCALL } from './redux/actions/a_apiCALL.js'
 import Button from './components/Button.js'
 import Title from './components/Title.js'
 import MainChart from './components/Chart.js'
+import SymbolForm from './components/Form.js'
 
 // STYLED COMPONENTS
 const APP_CONTAINER = styled.div`
@@ -29,10 +33,9 @@ const EXTENDED_Button = styled(Button)`
 
 // COMPONENT TO EXPORT
 function App(props) {
+  
   useEffect(() => {
     console.log('useEffect Triggered!')
-    // -- // 
-
     // -- // 
     props.a_apiCALL()
 
@@ -40,6 +43,7 @@ function App(props) {
   return (
     <APP_CONTAINER className="AppContainer">
       <div>REDUX API APP</div>
+      <SymbolForm />
       <Title />
       <MainChart />
     </APP_CONTAINER>

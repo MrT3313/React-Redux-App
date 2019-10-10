@@ -22,7 +22,6 @@ import {
             case API_CALL_START:
                 console.log('starting api call')
                 return {
-                    ...state,
                     is_fetching: true
                 }
             case API_CALL_SUCCESS:
