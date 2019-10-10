@@ -10,6 +10,8 @@ import { a_apiCALL } from './redux/actions/a_apiCALL.js'
 
 // COMPONENTS
 import Button from './components/Button.js'
+import Title from './components/Title.js'
+import MainChart from './components/Chart.js'
 
 // STYLED COMPONENTS
 const APP_CONTAINER = styled.div`
@@ -25,6 +27,7 @@ const EXTENDED_Button = styled(Button)`
   background-color: lightblue;
 `;
 
+// COMPONENT TO EXPORT
 function App(props) {
   useEffect(() => {
     console.log('useEffect Triggered!')
@@ -37,7 +40,8 @@ function App(props) {
   return (
     <APP_CONTAINER className="AppContainer">
       <div>REDUX API APP</div>
-
+      <Title />
+      <MainChart />
     </APP_CONTAINER>
   );
 }

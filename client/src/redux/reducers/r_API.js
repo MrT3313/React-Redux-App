@@ -31,7 +31,7 @@ import {
                     ...state, 
                     is_fetching: false,
                     error: '',
-                    apiData: action.payload.data
+                    apiData: action.payload
                 }
             case API_CALL_FAILURE:
                 console.log('api call failed')

@@ -9,7 +9,7 @@ export const API_CALL_FAILURE = 'API_CALL_FAILURE'
 
 export const a_apiCALL = (symbol = 'AAPL') => {
     console.log('inside apiCALL action creator')
-    console.log(symbol)
+    // console.log(symbol)
     // -- // Send First Action
     return dispatch => {
         dispatch({type: API_CALL_START})
@@ -17,10 +17,10 @@ export const a_apiCALL = (symbol = 'AAPL') => {
         axios
             .get(`https://financialmodelingprep.com/api/v3/historical-price-full/${symbol}`)
             .then( symbolData => {
-                console.log('symbolData', symbolData )
+                console.log('symbolData', symbolData.data )
                 dispatch({
                     type: API_CALL_SUCCESS,
-                    payload: symbolData,
+                    payload: symbolData.data,
                 })
             })
             .catch( err => {
